@@ -17,7 +17,9 @@ public class Exercises {
         //execute.isLapLear(2020);
         //execute.randomString("sanchez");
         //execute.onlyNotDuplicatesList(Arrays.asList(1,5,2,4,9,8,4,6,7,2,3,7));
-        execute.checkExistVowel("klyt");
+        //execute.checkExistVowel("klyt");
+       boolean result=execute.isPalindroma2("radar");
+        System.out.println(result);
     }
     public void invertString(String string){
         String[] arrayText=string.split("");
@@ -105,5 +107,12 @@ public void counterCharacter(String text){
         System.out.println(result);
         System.out.println(result2);
     }
-
+    public boolean isPalindroma2(String string){
+            for (int i=0; i<string.length()/2; i++){
+                if (string.charAt(i)!=string.charAt(string.length()-i-1)){
+                    return false;
+                }
+            }
+            return true;
+    }
 }
