@@ -17,7 +17,7 @@ public class Exercises {
         //execute.isLapLear(2020);
         //execute.randomString("sanchez");
         //execute.onlyNotDuplicatesList(Arrays.asList(1,5,2,4,9,8,4,6,7,2,3,7));
-        execute.borrar("sanchez");
+        execute.checkExistVowel("klyt");
     }
     public void invertString(String string){
         String[] arrayText=string.split("");
@@ -97,10 +97,13 @@ public void counterCharacter(String text){
         Set<Integer> noDuplicates=new HashSet<>(list);
         noDuplicates.forEach(System.out::println);
     }
-    public void borrar(String texto){
-        String[] mytexto=texto.split("");
-        List<String> list=Arrays.asList(mytexto);
-        Collections.shuffle(list);
-        list.forEach(System.out::println);
+  public void checkExistVowel(String string){
+        String[] text=string.split("");
+        boolean result=string.matches(".*[aeiou].*");
+        //other way
+        boolean result2=Arrays.stream(text).anyMatch(s -> s.equals("a") ||s.equals("e") || s.equals("i") || s.equals("o")||s.equals("u"));
+        System.out.println(result);
+        System.out.println(result2);
     }
+
 }
